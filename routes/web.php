@@ -5,6 +5,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\App\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\App\Admin\DepartmentController as AdminDepartment;
 use App\Http\Controllers\App\Admin\PositionController as AdminPosition;
+use App\Http\Controllers\App\Admin\UserController as AdminUser;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +39,5 @@ Route::post('/app/admin/positions', [AdminPosition::class, 'store'])->name('app.
 Route::delete('/app/admin/positions/{position}', [AdminPosition::class, 'destroy'])->name('app.admin.positions.destroy');
 Route::get('/app/admin/positions/{position}', [AdminPosition::class, 'modify'])->name('app.admin.positions.modify');
 Route::put('/app/admin/positions/{position}', [AdminPosition::class, 'update'])->name('app.admin.positions.update');
+
+Route::get('/app/admin/users', [AdminUser::class, 'index'])->name('app.admin.users.index');
